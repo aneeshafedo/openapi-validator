@@ -1,0 +1,29 @@
+apply plugin: "java"
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation "io.swagger.core.v3:swagger-core:2.1.6"
+    implementation "io.swagger.core.v3:swagger-models:2.1.6"
+    implementation "io.swagger.parser.v3:swagger-parser:2.0.24"
+    implementation "io.swagger.parser.v3:swagger-parser-core:2.0.24"
+    implementation "io.swagger.parser.v3:swagger-parser-v3:2.0.24"
+    implementation  "com.moandjiezana.toml:toml4j:0.7.2"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+

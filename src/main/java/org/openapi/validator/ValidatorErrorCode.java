@@ -1,0 +1,23 @@
+package org.openapi.validator;
+
+public class ValidatorErrorCode {
+    public static final String BAL_OPENAPI_VALIDATOR_0001 = "BAL_OPENAPI_VALIDATOR_0001";
+    public static final String BAL_OPENAPI_VALIDATOR_0002 = "BAL_OPENAPI_VALIDATOR_0002";
+    public static final String BAL_OPENAPI_VALIDATOR_0003 = "BAL_OPENAPI_VALIDATOR_0003";
+    public static final String BAL_OPENAPI_VALIDATOR_0004 = "BAL_OPENAPI_VALIDATOR_0004";
+    public static final String BAL_OPENAPI_VALIDATOR_0005 = "BAL_OPENAPI_VALIDATOR_0005";
+    public static final String BAL_OPENAPI_VALIDATOR_0006 = "BAL_OPENAPI_VALIDATOR_0006";
+    public static final String BAL_OPENAPI_VALIDATOR_0007 = "BAL_OPENAPI_VALIDATOR_0007";
+    public static final String BAL_OPENAPI_VALIDATOR_0008 = "BAL_OPENAPI_VALIDATOR_0008";
+    public static final String BAL_OPENAPI_VALIDATOR_0009 = "BAL_OPENAPI_VALIDATOR_0009";
+    public static final String BAL_OPENAPI_VALIDATOR_0010 = "BAL_OPENAPI_VALIDATOR_0010";
+    public static final String BAL_OPENAPI_VALIDATOR_0011 = "BAL_OPENAPI_VALIDATOR_0011";
+    public static final String BAL_OPENAPI_VALIDATOR_0012 = "BAL_OPENAPI_VALIDATOR_0012";
+    public static final String BAL_OPENAPI_VALIDATOR_0013 = "BAL_OPENAPI_VALIDATOR_0013";
+    public static final String BAL_OPENAPI_VALIDATOR_0014 = "BAL_OPENAPI_VALIDATOR_0014";
+    public static final String BAL_OPENAPI_VALIDATOR_0015 = "BAL_OPENAPI_VALIDATOR_0015";
+    public static final String BAL_OPENAPI_VALIDATOR_0016 = "BAL_OPENAPI_VALIDATOR_0016";
+    public static final String BAL_OPENAPI_VALIDATOR_0017 = "BAL_OPENAPI_VALIDATOR_0017";
+    public static final String BAL_OPENAPI_VALIDATOR_0018 = "BAL_OPENAPI_VALIDATOR_0018";
+    public static final String BAL_OPENAPI_VALIDATOR_0019 = "BAL_OPENAPI_VALIDATOR_0019";
+}

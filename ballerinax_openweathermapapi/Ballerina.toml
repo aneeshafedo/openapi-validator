@@ -1,0 +1,7 @@
+[package]
+org = "ballerinax"
+name = "ballerinax_openweathermapapi"
+version = "1.0.0"
+
+[build-options]
+observabilityIncluded = true
