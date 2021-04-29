@@ -21,8 +21,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -32,11 +38,11 @@ public class Validator {
     public static final String ICON = "icon";
     public static final String ORG = "ballerinax";
     private static final String MD5 = "MD5";
-    private static final Logger LOGGER = Logger.getLogger(Validator.class.getName());
-
+    private static final java.util.logging.Logger LOGGER = Logger.getInstance();
+    
     public static List<String> validate(String rootDir) throws OpenApiException, ValidatorException {
         String propertyFile = getPropertyFile(rootDir);
-        List<String> updatedYamlFiles = new ArrayList<String>();
+        List<String> updatedYamlFiles = new ArrayList<>();
         Properties props = new Properties();
         try (InputStream input = new FileInputStream(propertyFile)) {
             props.load(input);
@@ -212,7 +218,6 @@ public class Validator {
         MessageDigest md = MessageDigest.getInstance(MD5);
         md.update(Files.readAllBytes(Paths.get(filePath)));
         byte[] digest = md.digest();
-        String checksum = DatatypeConverter.printHexBinary(digest).toUpperCase();
-        return checksum;
+        return DatatypeConverter.printHexBinary(digest).toUpperCase();
     }
 }
