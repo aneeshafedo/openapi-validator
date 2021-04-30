@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: World Bank Indicator API
+  description: Here you can find documentation for COVID-19 REST API.
+  x-display:
+    label: "World Banl Indicators"
+    icon: "/path/to/icon"
+servers:
+  - description: Indicators represent data like total population, gross national income, energy use, and many more
+    url: http://api.worldbank.org/v2/
+paths: 
+  /country/all/indicator/SP.POP.TOTL:
+    get:
+      tags: ["Data for all countries"]
+      description: Returns information about total popultion of the world
+      operationId: getWorldPopulation
+      x-display:
+        label: "Get total population worldwide"
+      parameters:
+        - name: date
+          in: query
+          description: Date-range by year, month or quarter that scopes the result-set.
+          required: true
+          schema:
+            type: string
+          x-display:
+            label: "date"
+        - name: format
+          in: query
+          description: Format of the response.
+          required: false
+          schema:
+            type: string
+            default: json
+          x-display:
+            label: "format"
+      responses:
+        '200':
+          description: A list of population across world
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {
+                  "$ref": "#/components/schemas/Countries"
+                }
+  /country/{country_name}/indicator/DPANUSSPB:
+    get:
+      tags: ["GDP data of a given country"]
+      description: Returns GDP information of the given country in the given date
+      operationId: getGDPBycountry
+      x-display:
+        label: "Get GDP data by country"
+      parameters:
+        - name: date
+          in: query
+          description: Date-range by year, month or quarter that scopes the result-set.
+          required: true
+          schema:
+            type: string
+          x-display:
+            label: "date"
+        - name: country_name
+          in: path
+          description: Date-range by year, month or quarter that scopes the result-set.
+          required: true
+          schema:
+            type: string
+          x-display:
+            label: "country name"
+        - name: format
+          in: query
+          description: Format of the response.
+          required: false
+          schema:
+            type: string
+            default: json
+          x-display:
+            label: "format"
+      responses:
+        '200':
+          description: List GDP information of each year
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {
+                  "$ref": "#/components/schemas/Countries"
+                }
+components:
+  schemas:
+    Indicator:
+      type: object
+      properties:
+        id:
+          type: string
+          example: SP.POP.TOTL
+        value:
+          type: string
+          example: Population
+    Countries:
+      type: object
+      properties:
+        indicator:
+            type: array
+            $ref: "#/components/schemas/Indicator"
+    Error:
+      type: object
+      properties: 
+        name:
+          type: string
